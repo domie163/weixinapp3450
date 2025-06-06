@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ZulinhetongDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ZulinhetongEntity" id="zulinhetongMap">
+        <result property="fangwubianhao" column="fangwubianhao"/>
+        <result property="fangwumingcheng" column="fangwumingcheng"/>
+        <result property="zhuangtai" column="zhuangtai"/>
+        <result property="zujin" column="zujin"/>
+        <result property="xiangxidizhi" column="xiangxidizhi"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="zukexingming" column="zukexingming"/>
+        <result property="shouji" column="shouji"/>
+        <result property="shenfenzheng" column="shenfenzheng"/>
+        <result property="fangdongzhanghao" column="fangdongzhanghao"/>
+        <result property="fangdongxingming" column="fangdongxingming"/>
+        <result property="lianxishouji" column="lianxishouji"/>
+        <result property="zufangzhuangtai" column="zufangzhuangtai"/>
+        <result property="zulinriqi" column="zulinriqi"/>
+        <result property="qiandingshijian" column="qiandingshijian"/>
+        <result property="zulinpingzheng" column="zulinpingzheng"/>
+        <result property="userid" column="userid"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ZulinhetongVO" >
+		SELECT * FROM zulinhetong  zulinhetong         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ZulinhetongVO" >
+		SELECT  zulinhetong.* FROM zulinhetong  zulinhetong
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ZulinhetongView" >
+
+		SELECT  zulinhetong.* FROM zulinhetong  zulinhetong 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ZulinhetongView" >
+		SELECT * FROM zulinhetong  zulinhetong <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
